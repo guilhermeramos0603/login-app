@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
 
-  LoginController _controller = LoginController();
+  final LoginController _controller = LoginController();
 
   @override
   Widget build(BuildContext context) {

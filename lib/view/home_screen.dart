@@ -22,7 +22,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Posts')),
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text('Posts'),
+      ),
       body: ValueListenableBuilder(
         valueListenable: _controller.posts,
         builder: (_, list, __) {
