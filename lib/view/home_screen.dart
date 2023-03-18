@@ -1,5 +1,6 @@
 import 'package:app/controllers/home_controller.dart';
 import 'package:app/repositories/home_repository_imp.dart';
+import 'package:app/service/prefs_service.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -24,6 +25,15 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Posts'),
+        actions: [
+          IconButton(
+              onPressed: () {
+                PrefsService.logout();
+                Navigator.of(context)
+                    .pushNamedAndRemoveUntil('/loginScreen', (_) => true);
+              },
+              icon: const Icon(Icons.logout))
+        ],
       ),
       body: ValueListenableBuilder(
         valueListenable: _controller.posts,
