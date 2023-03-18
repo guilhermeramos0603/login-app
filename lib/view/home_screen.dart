@@ -1,6 +1,5 @@
 import 'package:app/controllers/home_controller.dart';
 import 'package:app/repositories/home_repository_imp.dart';
-import 'package:app/repositories/home_repository_mock.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {

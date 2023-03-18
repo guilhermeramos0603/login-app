@@ -1,3 +1,4 @@
+import 'package:app/service/prefs_service.dart';
 import 'package:flutter/material.dart';
 
 class LoginController {
@@ -13,7 +14,10 @@ class LoginController {
     inLoader.value = true;
     await Future.delayed(const Duration(seconds: 2));
     inLoader.value = false;
-    if (_email == 'admin@mail.com' && _pass == '123456') return true;
+    if (_email == 'admin@mail.com' && _pass == '123456') {
+      PrefsService.save(_email!);
+      return true;
+    }
     return false;
   }
 }
